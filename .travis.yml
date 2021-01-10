@@ -12,17 +12,17 @@ scripts:
 
 
 after_success:
-        - docker build -t multi-client ./client
-        - docker build -t multi-nginx ./nginx
-        - docker build -t multi-server ./server
-        - docker build -t multi-worker ./worker
+        - docker build -t tobeortoc/multi-client ./client
+        - docker build -t tobeortoc/multi-nginx ./nginx
+        - docker build -t tobeortoc/multi-server ./server
+        - docker build -t tobeortoc/multi-worker ./worker
 
 #Login to Docker CLI
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
-        - docker push multi-client
-        - docker push multi-nginx
-        - docker push multi-server
-        - docker push multi-worker
+        - docker push tobeortoc/multi-client
+        - docker push tobeortoc/multi-nginx
+        - docker push tobeortoc/multi-server
+        - docker push tobeortoc/multi-worker
        
 
 ## Push images to Docker hub
